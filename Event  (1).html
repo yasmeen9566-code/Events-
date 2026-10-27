@@ -1,0 +1,306 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Registration Portal</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>College Event Registration Portal</h1>
+        <p>Explore and Register for College Events</p>
+    </header>
+
+    <hr>
+
+    <h2>Upcoming Events</h2>
+
+    <section>
+        <h3>1. Technical Symposium</h3>
+        <p>Date: 15 November 2026</p>
+        <p>Venue: College Auditorium</p>
+        <p>Participate in technical competitions and workshops.</p>
+    </section>
+
+    <hr>
+
+    <section>
+        <h3>2. Cultural Fest</h3>
+        <p>Date: 20 November 2026</p>
+        <p>Venue: College Ground</p>
+        <p>Enjoy dance, music, and cultural activities.</p>
+    </section>
+
+    <hr>
+
+    <section>
+        <h3>3. Sports Day</h3>
+        <p>Date: 25 November 2026</p>
+        <p>Venue: College Playground</p>
+        <p>Participate in exciting sports competitions.</p>
+    </section>
+
+    <hr>
+
+    <h2>Event Registration Form</h2>
+
+    <form>
+
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <br><br>
+
+        <label for="register">Register Number:</label>
+        <input type="text" id="register" name="register" required>
+
+        <br><br>
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required>
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <br><br>
+
+        <label for="event">Select Event:</label>
+
+        <select id="event" name="event" required>
+            <option value="">Choose an Event</option>
+            <option value="Technical Symposium">
+                Technical Symposium
+            </option>
+            <option value="Cultural Fest">
+                Cultural Fest
+            </option>
+            <option value="Sports Day">
+                Sports Day
+            </option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Register Now</button>
+
+    </form>
+
+    <hr>
+
+    <footer>
+        <p>© 2026 College Event Registration Portal</p>
+    </footer>
+
+</body>
+</html>
+<style>
+/* General Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+
+header {
+    background-color: #2563eb;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* Main Headings */
+
+h2 {
+    text-align: center;
+    color: #1e40af;
+    margin: 30px 0 20px;
+}
+
+/* Event Sections */
+
+section {
+    background-color: white;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #2563eb;
+}
+
+section h3 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+section p {
+    margin-bottom: 8px;
+}
+
+/* Registration Form */
+
+form {
+    background-color: white;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Input Focus */
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Register Button */
+
+button {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Button Hover */
+
+button:hover {
+    background-color: #1e40af;
+}
+
+/* Footer */
+
+footer {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    section {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    form {
+        margin: 15px;
+        padding: 20px;
+    }
+
+}
+</style><script>
+const form = document.querySelector("form");
+
+// Create confirmation message
+const confirmation = document.createElement("div");
+
+confirmation.style.backgroundColor = "#dcfce7";
+confirmation.style.color = "#166534";
+confirmation.style.padding = "20px";
+confirmation.style.margin = "20px auto";
+confirmation.style.maxWidth = "600px";
+confirmation.style.borderRadius = "10px";
+confirmation.style.textAlign = "center";
+confirmation.style.display = "none";
+
+form.after(confirmation);
+
+// Form Submission
+form.addEventListener("submit", function(event) {
+
+    // Prevent page reload
+    event.preventDefault();
+
+    // Get student details
+    const studentName = document.getElementById("name").value;
+    const registerNumber = document.getElementById("register").value;
+    const department = document.getElementById("department").value;
+    const email = document.getElementById("email").value;
+    const selectedEvent = document.getElementById("event").value;
+
+    // Check form validity
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    // Display confirmation message
+    confirmation.style.display = "block";
+
+    confirmation.innerHTML = `
+        <h2>Registration Successful!</h2>
+        <p>Thank you, ${studentName}!</p>
+        <p>Your registration has been completed.</p>
+        <p><strong>Register Number:</strong> ${registerNumber}</p>
+        <p><strong>Department:</strong> ${department}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Event:</strong> ${selectedEvent}</p>
+    `;
+
+    // Reset form
+    form.reset();
+
+    // Scroll to confirmation message
+    confirmation.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+</script>
